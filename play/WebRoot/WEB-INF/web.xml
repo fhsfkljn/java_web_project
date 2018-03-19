@@ -9,6 +9,16 @@
   	<listener-class>play.MySessionListener</listener-class>
   </listener>
   
+  
+  <servlet>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<servlet-class>com.chao.upload.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<url-pattern>/servlet/uploadServlet</url-pattern>
+  </servlet-mapping>
+  
  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
