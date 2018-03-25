@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!--配置为开发者模式，可以看到更加详细的信息  -->
+	<constant name="struts.devMode" value="true"/>
+	<package name="p1" extends="struts-default">
+		<action name="register" class="com.chao.web.action.UserAction" method="register" >
+			<result type="redirect">/success.jsp</result><!-- 当注册成功之后重定向的结果视图 -->
+			<result name="exists">/message.jsp</result><!-- 当用户名已经存在之后，转向的结果视图 -->
+		</action>
+	</package>
+	
+</struts> 
