@@ -9,6 +9,14 @@
 		<action name="register" class="com.chao.web.action.UserAction" method="register" >
 			<result type="redirect">/success.jsp</result><!-- 当注册成功之后重定向的结果视图 -->
 			<result name="exists">/message.jsp</result><!-- 当用户名已经存在之后，转向的结果视图 -->
+			<!-- 用于回显视图，必须回显，使用struts标签时报错会看不到结果 -->
+			<result name="input">/register.jsp</result>
+		</action>
+		
+		<!-- 声明式验证器案例的动作类配置 -->
+		<action name="addStudent" class="com.chao.web.action.StudentAction" method="addStudent" >
+		<!-- 始终是回显，用于验证，始终显示注册的页面 -->
+			<result name="input">/student.jsp</result>
 		</action>
 	</package>
 	

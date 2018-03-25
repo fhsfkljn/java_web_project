@@ -1,0 +1,3 @@
+#全局类型转换器文件名的命名规范：xwork-conversion.properties
+#全局类型转换器声明，声明方式是以使用的属性名称作为key，以类型转换器的全类名作为value
+java.util.Date=com.chao.utils.MyTypeConvertor
