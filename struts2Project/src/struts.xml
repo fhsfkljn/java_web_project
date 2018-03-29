@@ -5,10 +5,44 @@
 <struts>
 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- 开启静态方法调用 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<!-- 用户登陆的操作 -->
 	<package name="p1" extends="struts-default">
 		<action name="login" class="com.chao.web.action.UserAction" method="login">
 			<result name="success">/login/home.jsp</result>
 			<result name="input">/login/login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="user" extends="struts-default" namespace="/user">
+		<action name="add" class="com.chao.web.action.UserAction" method="add">
+		<!-- 配置上传 文件扩展名的限制 -->
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedExtensions">.doc,.docx</param>
+			</interceptor-ref>
+			<result name="success">/user/list.jsp</result>
+			<result name="input">/user/add.jsp</result>
+		</action>
+		
+		<!-- 查询所有用户 -->
+		<action name="findAll" class="com.chao.web.action.UserAction" method="findAll">
+			<result name="success">/user/list.jsp</result>
+		</action>
+		
+		<!-- 查看用户详细信息 -->
+		<action name="findUserById" class="com.chao.web.action.UserAction" method="findUserById">
+			<result name="success">/user/view.jsp</result>
+		</action>
+		
+		<!-- 文件下载 -->
+		<action name="download" class="com.chao.web.action.UserAction" method="download">
+			<result type="stream">
+				<!-- 给stream的结果类型注入参数：1.流的信息 2.告知浏览器以下载的方式打开  3.告知浏览器响应正文的MIME类型 -->
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename=${@java.net.URLEncoder@encode(oldFileName,"UTF-8")}</param>
+				<param name="contentType">application/octet-stream</param>
+			</result>
 		</action>
 	</package>
 </struts>

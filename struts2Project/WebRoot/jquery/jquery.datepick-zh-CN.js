@@ -1,25 +1,25 @@
-/* Chinese initialisation for the jQuery UI date picker plugin. */
+ï»¿/* Chinese initialisation for the jQuery UI date picker plugin. */
 /* Written by Cloudream (cloudream@gmail.com). */
 (function($) {
 	$.datepick.regional['zh-CN'] = {
-		clearText: 'Çå³ı', clearStatus: 'Çå³ıÒÑÑ¡ÈÕÆÚ',
-		closeText: '¹Ø±Õ', closeStatus: '²»¸Ä±äµ±Ç°Ñ¡Ôñ',
-		prevText: '&#x3c;ÉÏÔÂ', prevStatus: 'ÏÔÊ¾ÉÏÔÂ',
-		prevBigText: '&#x3c;&#x3c;', prevBigStatus: 'ÏÔÊ¾ÉÏÒ»Äê',
-		nextText: 'ÏÂÔÂ&#x3e;', nextStatus: 'ÏÔÊ¾ÏÂÔÂ',
-		nextBigText: '&#x3e;&#x3e;', nextBigStatus: 'ÏÔÊ¾ÏÂÒ»Äê',
-		currentText: '½ñÌì', currentStatus: 'ÏÔÊ¾±¾ÔÂ',
-		monthNames: ['Ò»ÔÂ','¶şÔÂ','ÈıÔÂ','ËÄÔÂ','ÎåÔÂ','ÁùÔÂ',
-		'ÆßÔÂ','°ËÔÂ','¾ÅÔÂ','Ê®ÔÂ','Ê®Ò»ÔÂ','Ê®¶şÔÂ'],
-		monthNamesShort: ['Ò»','¶ş','Èı','ËÄ','Îå','Áù',
-		'Æß','°Ë','¾Å','Ê®','Ê®Ò»','Ê®¶ş'],
-		monthStatus: 'Ñ¡ÔñÔÂ·İ', yearStatus: 'Ñ¡ÔñÄê·İ',
-		weekHeader: 'ÖÜ', weekStatus: 'ÄêÄÚÖÜ´Î',
-		dayNames: ['ĞÇÆÚÈÕ','ĞÇÆÚÒ»','ĞÇÆÚ¶ş','ĞÇÆÚÈı','ĞÇÆÚËÄ','ĞÇÆÚÎå','ĞÇÆÚÁù'],
-		dayNamesShort: ['ÖÜÈÕ','ÖÜÒ»','ÖÜ¶ş','ÖÜÈı','ÖÜËÄ','ÖÜÎå','ÖÜÁù'],
-		dayNamesMin: ['ÈÕ','Ò»','¶ş','Èı','ËÄ','Îå','Áù'],
-		dayStatus: 'ÉèÖÃ DD ÎªÒ»ÖÜÆğÊ¼', dateStatus: 'Ñ¡Ôñ mÔÂ dÈÕ, DD',
+		clearText: 'æ¸…é™¤', clearStatus: 'æ¸…é™¤å·²é€‰æ—¥æœŸ',
+		closeText: 'å…³é—­', closeStatus: 'ä¸æ”¹å˜å½“å‰é€‰æ‹©',
+		prevText: '&#x3c;ä¸Šæœˆ', prevStatus: 'æ˜¾ç¤ºä¸Šæœˆ',
+		prevBigText: '&#x3c;&#x3c;', prevBigStatus: 'æ˜¾ç¤ºä¸Šä¸€å¹´',
+		nextText: 'ä¸‹æœˆ&#x3e;', nextStatus: 'æ˜¾ç¤ºä¸‹æœˆ',
+		nextBigText: '&#x3e;&#x3e;', nextBigStatus: 'æ˜¾ç¤ºä¸‹ä¸€å¹´',
+		currentText: 'ä»Šå¤©', currentStatus: 'æ˜¾ç¤ºæœ¬æœˆ',
+		monthNames: ['ä¸€æœˆ','äºŒæœˆ','ä¸‰æœˆ','å››æœˆ','äº”æœˆ','å…­æœˆ',
+		'ä¸ƒæœˆ','å…«æœˆ','ä¹æœˆ','åæœˆ','åä¸€æœˆ','åäºŒæœˆ'],
+		monthNamesShort: ['ä¸€','äºŒ','ä¸‰','å››','äº”','å…­',
+		'ä¸ƒ','å…«','ä¹','å','åä¸€','åäºŒ'],
+		monthStatus: 'é€‰æ‹©æœˆä»½', yearStatus: 'é€‰æ‹©å¹´ä»½',
+		weekHeader: 'å‘¨', weekStatus: 'å¹´å†…å‘¨æ¬¡',
+		dayNames: ['æ˜ŸæœŸæ—¥','æ˜ŸæœŸä¸€','æ˜ŸæœŸäºŒ','æ˜ŸæœŸä¸‰','æ˜ŸæœŸå››','æ˜ŸæœŸäº”','æ˜ŸæœŸå…­'],
+		dayNamesShort: ['å‘¨æ—¥','å‘¨ä¸€','å‘¨äºŒ','å‘¨ä¸‰','å‘¨å››','å‘¨äº”','å‘¨å…­'],
+		dayNamesMin: ['æ—¥','ä¸€','äºŒ','ä¸‰','å››','äº”','å…­'],
+		dayStatus: 'è®¾ç½® DD ä¸ºä¸€å‘¨èµ·å§‹', dateStatus: 'é€‰æ‹© mæœˆ dæ—¥, DD',
 		dateFormat: 'yy-mm-dd', firstDay: 1,
-		initStatus: 'ÇëÑ¡ÔñÈÕÆÚ', isRTL: false};
+		initStatus: 'è¯·é€‰æ‹©æ—¥æœŸ', isRTL: false};
 	$.datepick.setDefaults($.datepick.regional['zh-CN']);
 })(jQuery);
