@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- p命名 空间，对于setter的简化 -->
+	<bean id="personId" class="com.chao.dixml.pname.Person"
+		p:pname="杨远帆" p:age="38"
+		p:homeAddr-ref="homeAddrId" p:companyAddr-ref="companyAddrId">
+	</bean>
+	 
+	 <bean id="homeAddrId" class="com.chao.dixml.pname.Address"
+	 	p:addr="厕所" p:tel="119">
+	 </bean>
+	 
+	 <bean id="companyAddrId" class="com.chao.dixml.pname.Address"
+	 	p:addr="茅厕" p:tel="911">
+	 </bean>
+
+</beans> 

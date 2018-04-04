@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- setter方法注入 
+		* 普通数据 
+			<property name="" value="值">
+			等效
+			<property name="">
+				<value>值
+		* 引用数据
+			<property name="" ref="另一个bean">
+			等效
+			<property name="">
+				<ref bean="另一个bean"/>
+	
+	-->
+	<bean id="personId" class="com.chao.dixml.setter.Person">
+		<property name="pname" value="杨远帆"></property>
+		<property name="age" value="38"></property>
+		
+		<property name="homeAddr" ref="homeAddrId"></property>
+		<property name="companyAddr" ref="companyAddrId"></property>
+	</bean>
+	 
+	 <bean id="homeAddrId" class="com.chao.dixml.setter.Address">
+	 	<property name="addr" value="厕所"></property>
+	 	<property name="tel" value="138xxxx5438"></property>
+	 </bean>
+	 
+	 <bean id="companyAddrId" class="com.chao.dixml.setter.Address">
+	 	<property name="addr" value="茅厕"></property>
+	 	<property name="tel" value="138xxxx6666"></property>
+	 </bean>
+
+</beans> 

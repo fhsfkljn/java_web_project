@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- init-method 用于配置初始化方法,准备数据等 
+	     destroy-method 用于配置销毁方法,清理资源等
+	     scope 作用域，默认是单例的singleton -->
+	<bean id="userServiceId" class="com.chao.lifecycle.UserServiceImpl"
+		init-method="myInit" destroy-method="myDestory" scope="singleton"></bean>
+		
+	<!-- 将后处理的实现类注册给spring -->
+	<bean class="com.chao.lifecycle.MyBeanPostProcessor"></bean>
+
+</beans> 

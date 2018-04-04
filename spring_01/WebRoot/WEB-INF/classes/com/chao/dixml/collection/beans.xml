@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		集合的注入都是给<property>添加子标签
+			数组：<array>
+			List：<list>
+			Set：<set>
+			Map：<map> ，map存放k/v 键值对，使用<entry>描述
+			Properties：<props>  <prop key=""></prop>  【】
+			
+		普通数据：<value>
+		引用数据：<ref>
+	-->
+	<bean id="collDataId" class="com.chao.dixml.collection.CollData">
+		<property name="arrayData">
+			<list>
+				<value>我有</value>
+				<value>一只</value>
+				<value>小</value>
+				<value>毛驴</value>
+			</list>
+		</property>
+		
+		<property name="listData">
+			<list>
+				<value>我</value>
+				<value>从来</value>
+				<value>也</value>
+				<value>不骑</value>
+			</list>
+		</property>
+		
+		<property name="setData">
+			<set>
+				<value>有一天</value>
+				<value>我心血来潮</value>
+				<value>骑它去赶集</value>
+			</set>
+		</property>
+		
+		<property name="mapData">
+			<map>
+				<entry key="jack" value="杰克"></entry>
+				<entry>
+					<key><value>rose</value></key>
+					<value>肉丝</value>
+				</entry>
+			</map>
+		</property>
+		
+		<property name="propsData">
+			<props>
+				<prop key="高富帅">嫐</prop>
+				<prop key="白富美">嬲</prop>
+				<prop key="男屌丝">挊</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+</beans> 
