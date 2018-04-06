@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 1基本4项 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///text</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">8520123456</property>
+		
+		<!-- 2 配置方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		<!-- 3 sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- 4 自动生成表(一般没用) -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 5本地线程绑定 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- 傻逼代码，fuck！！！！！ -->
+		<property name="javax.persistence.validation.mode">none</property>  
+		
+		<!-- 导入映射文件 -->
+		<mapping resource="com/itheima/domain/User.hbm.xml"/>
+	
+	</session-factory>
+</hibernate-configuration>
