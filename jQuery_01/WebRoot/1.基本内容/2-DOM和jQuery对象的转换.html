@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+	<script src="../js/jquery-1.8.3.js"></script>
+<body>
+	<input type="text" id="username" value="jack"/>
+	
+	<script type="text/javascript">
+		//1 使用javascript获得value值
+		var username = document.getElementById("username");
+		//alert(username.value);
+		
+		//2 将 dom对象 转换 jQuery对象
+		// * 语法：$(dom对象)
+		// * 建议：jQuery对象变量名，建议为$开头
+		var $username = $(username);
+//		alert($username.val());
+		
+		//3 将 jQuery对象 转换 dom对象
+		//3.1 jQuery对象内部使用【数组】存放所有的数据，可以数组的下标获取（索引）
+		var username2 = $username[0];
+		alert(username2.value);
+		//3.2 jQuery提供函数 get() 转换成dom对象
+		var username3 = $username.get(0);
+		alert(username3.value);
+	</script>
+</body>
+</html>

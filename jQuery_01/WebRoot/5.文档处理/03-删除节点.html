@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>05_删除节点.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	</head>
+	 
+	<body>
+		 <ul id="city">
+		 	 <li id="bj" name="beijing">北京<p>海淀区</p></li>
+			 <li id="tj" name="tianjin">天津<p>河西区</p></li>
+			 <li id="cq" name="chongqing">重庆</li>
+		 </ul>
+		<p class="hello">Hello</p> how are <p>you?</p> 
+	</body>
+<script type="text/javascript">
+	// 将city移除，再追加body后面
+	
+	//#1 绑定事件
+	$("#city").click(function(){
+		alert("O(∩_∩)O~");
+	});
+	//#2 绑定数据
+	$("#city").data("itheima","就是屌");
+	
+	
+	//1 移除
+	var $city = $("#city").remove(); //移除绑定的事件、移除绑定的数据
+//	var $city = $("#city").detach(); //保留绑定的事件、保留绑定的数据
+	
+	
+	//2 追加
+	$("body").append($city);
+	
+	
+	//#3获得绑定的数据
+	alert($("#city").data("itheima"));
+
+</script>
+   
+</html>
+
+
+
