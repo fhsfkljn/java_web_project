@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//1 创建10div
+			for(var i = 0 ; i < 5 ; i ++){
+				createDiv();
+			}
+			
+			
+			//定时器
+			setInterval(showDiv,100);
+		});
+		
+		function showDiv(){
+			//第一个隐藏
+			$("div:first").slideUp(100,function(){
+				$(this).appendTo("body").slideDown(100);
+			});
+		}
+		
+		var num = 1;
+		//创建div
+		function createDiv(){
+			var $div = $("<div class='newDiv' />");
+			$div.html(num ++ );
+			
+			$("body").append($div);
+		}
+		
+	</script>
+	
+	<style>
+		.newDiv{
+		  border: 1px solid #999;
+		  width: 400px;
+		  height: 100px;
+		  margin: 5px;
+		  font-size: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+</body>
+</html>

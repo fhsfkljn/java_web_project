@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			alert($("form").serialize());
+		}); 
+		
+		
+	</script>
+	
+	<style type="text/css">
+		.textClass {
+			background-color: #ff0000;
+		}
+	</style>
+</head>
+<body>
+	<h3>表单</h3>
+	<form action="">
+		<table border="1" >
+			<tr id="tr1">
+				<td class=""><label>姓名</label></td>
+				<td><input type="text" name="username" class="textClass" value="jack" /></td>
+			</tr>
+			<tr>
+				<td class=""><span>密码</span></td>
+				<td><input type="password" name="password" value="1234" /></td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>
+					<input type="radio" name="gender" value="男" />男
+					<input type="radio" name="gender" value="女" checked="checked" />女
+				</td>
+			</tr>
+			<tr id="tr4">
+				<td>爱好</td>
+				<td>
+					<input type="checkbox" name="hobby" value="1"/>抽烟
+					<input type="checkbox" name="hobby" value="2" checked="checked"/>喝酒
+					<input type="checkbox" name="hobby" value="3" checked="checked"/>烫头
+				</td>
+			</tr>
+			<tr>
+				<td>我的照片</td>
+				<td><input type="file" name="image" /></td>
+			</tr>
+			<tr>
+				<td>学历</td>
+				<td>
+					<select name="edu">
+						<option value="1">小班</option>
+						<option value="2" selected="selected">中班</option>
+						<option value="3">大班</option>
+						<option value="4">学前班</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button>普通按钮</button>
+					<input type="submit" value="提交按钮" />
+					<input type="reset" value="重置按钮" />
+					<input type="image" value="图片按钮" src="" style="height: 30px;width: 50px" />
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	<h3>公告信息</h3>
+	<div>
+		未满18慎进
+	</div>
+	
+		
+</body>
+</html>

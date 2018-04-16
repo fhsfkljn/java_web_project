@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//1所有分组列表项默认都是隐藏的。
+			//2 分组（span）可以点击，控制下面的列表项显示或隐藏
+			//3 当前分组列表项显示，其他分页隐藏（同时只有一个显示）
+			
+			$("div").children("a").hide().prev("span").click(function(){
+				$(this).nextAll("a").toggle().parent().siblings("div").find("a").hide();
+			});
+			
+		});
+		
+		
+	</script>
+	
+	<style type="text/css">
+		div *{
+			display:block;
+			width:200px;
+		}
+		div span{
+			background-color : #0f0;
+		}
+	</style>
+</head>
+<body>
+	
+		<div>
+			<span>追求中</span>
+			<a>娇娇</a>
+			<a>薄纸</a>
+			<a>于松楠</a>
+		</div>
+		<div>
+			<span>已交往</span>
+			<a>关系</a>
+			<a>瑞瑞</a>
+			<a>张琛</a>
+		</div>
+		<div>
+			<span>已分手</span>
+			<a>洋芋</a>
+			<a>阳阳</a>
+			<a>东东</a>
+			<a>纯纯</a>
+		</div>
+		
+</body>
+</html>

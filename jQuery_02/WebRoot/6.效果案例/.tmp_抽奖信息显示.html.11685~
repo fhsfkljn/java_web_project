@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<!-- 导入js库 ，注意：使用src属性之后，标签体中不能写入内容-->
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			
+			//1 初始化个数
+			for(var i = 0 ; i< 4 ; i ++){
+				//1.1 创建一个div
+				createDiv();
+			}
+			
+			// 隐藏第一个
+			setInterval("hideFirst()",1000);  //1秒之后执行一次
+			
+		});
+		
+		//隐藏第一个
+		function hideFirst(){
+			$("div").first().slideUp(1000,function(){
+				//完成，将当前追击到最后
+				$("body").append($(this));
+				$(this).fadeIn(2000);
+			});
+		}
+		
+		//创建
+		var num = 1;
+		function createDiv(){
+			//1 创建div
+			var $divObj = $("<div></div>");
+			
+			//2设置样式
+			$divObj.css({
+				border: "1px solid #000" ,
+				height: "100px",
+				width : "500px",
+				margin: "5px"
+			});
+			
+			//3写入内容，用于记录当前div个数
+			$divObj.html(num);
+			num++;
+			
+			//4 添加
+			$("body").append($divObj);
+		}
+		
+		
+	</script>
+</head>
+<body>
+	
+		
+</body>
+</html>

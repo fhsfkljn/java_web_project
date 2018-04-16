@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//1 创建10div
+			for(var i = 0 ; i < 10 ; i ++){
+				createDiv();
+			}
+			//2 浏览器添加滚动事件
+			$(window).scroll(function(){
+				//2.1 滚过高度
+				var wt = $(this).scrollTop();
+				//2.2 整个文档高度
+				var dh = $(document).height();
+				//2.3 窗口的高度
+				var wh = $(this).height();
+				
+				//3 当接近底部时，添加
+				if(wt + wh + 100 > dh){
+					createDiv();
+					
+					//发送ajax填充数据
+				}
+				
+				//提示
+				$("#showDiv").html("wt: " + wt + " , dh: " + dh + " , wh:" + wh);
+			});
+			
+		});
+		
+		var num = 1;
+		//创建div
+		function createDiv(){
+			var $div = $("<div class='newDiv' />");
+			$div.html(num ++ );
+			
+			$("body").append($div);
+		}
+		
+	</script>
+	
+	<style>
+		.newDiv{
+		  border: 1px solid #999;
+		  width: 400px;
+		  height: 100px;
+		  margin: 5px;
+		  font-size: 50px;
+		}
+		#showDiv{
+		   border: 1px solid #999;
+		  width: 500px;
+		  height: 30px;
+		  position: fixed;
+		  bottom: 0;
+		  right: 100px;
+		}
+		
+	</style>
+</head>
+<body>
+		<div id="showDiv"></div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			//发送ajax   /DemoServlet
+			
+			$("input[type='button']").click(function(){
+				var url = "/day30_jquery/DemoServlet";
+				var params = {"username":"越文就是屌"};
+				//1 load 发送，不是全局函数
+				// 参数1：url 请求路径
+				// 参数2：params 请求参数
+					//没有 params 参数，发送的get请求
+					//如果有参数发送post请求，参数格式json
+				// 参数3：回调
+				/*
+				$(this).load(url,params,function(data){
+					// 将字符串 转换 json对象
+					var jsonData = eval("("+data+")");
+					// json 数据操作(对象)
+					alert(jsonData.success);
+				});
+				*/
+				
+				//2post  全局
+				//参数4：响应内容类型，例如：xml, html, script, json, text, _default。
+				$.post(url,{'username':'jack'},function(data){
+					alert(data.success);
+				});
+				/*
+				*/
+				
+				/*
+				$.get(url,params,function(data){
+					alert(data);
+				});
+				$.ajax({
+					"url":url,  //请求路径
+					"data":params, //请求参数
+					"type":"post", //请求方式
+					"async":true,  //是否异步，默认值true
+					"success":function(data){ ////成功之后回调
+						alert(data.success);
+					},  
+					"error":function(){  //出错
+						alert(1);
+						
+					}
+				});
+				*/
+
+			});
+			
+			
+		});
+	</script>
+	
+</head>
+<body>
+	
+	<input type="button" value="发送ajax" />
+	
+	
+</body>
+</html>

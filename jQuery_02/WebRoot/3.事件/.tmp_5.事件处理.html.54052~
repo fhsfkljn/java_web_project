@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+	
+</head>
+<body>
+	<input id="h01" type="button" value="1只能点击一次，之后失效" /> 
+	<input id="h02" type="button" value="2可以点击多次" /> 
+	<input id="h03" type="button" value="3解绑2" /> 
+	<input type="button" value="4 添加一个按钮，样式为myClass，且拥有相同的事件" class="myClass" /> 
+	<input id="h05" type="button" value="5 解绑4"/> 
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		});
+	</script>
+	
+	<style type="text/css">
+		.textClass {
+			background-color: #ff0000;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<select id="leftSelectId" style="width:100px" multiple="multiple" size="6">
+					
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+				
+			</td>
+			<td>
+				<input id="left1" type="button" value=">" style="width:50px"/> <br/>
+				<input id="left2" type="button" value=">>" style="width:50px"/> <br/>
+				<input id="left3" type="button" value=">>>" style="width:50px"/> <br/>
+				
+				<input type="button" value="<" style="width:50px"/> <br/>
+				<input type="button" value="<<" style="width:50px"/> <br/>
+				<input type="button" value="<<<" style="width:50px"/> <br/>
+				
+			</td>
+			<td>
+				<select id="rightSelectId"  style="width:100px" multiple="multiple" size="6">
+					<option></option>
+				</select>
+				
+			</td>
+		</tr>
+	</table>
+		
+</body>
+</html>

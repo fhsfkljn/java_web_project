@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("input").click(function(){
+				//0.1 请求路径
+				var url = "/ee19_jquery_day02/SendDataServlet";
+				//0.2 请求参数，采用json
+				var params = {"username":"杰克", "password":"1234"};
+				
+				/* 1 load()函数 ，必须使用jquery对象
+				 * * 格式：load(url, [data], [callback])
+				 * 		参数1：url ，请求路径
+				 * 		参数2：data，请求参数
+				 * 		参数3：callback，回调函数
+				 * * 如果没有请求参数，发送的GET请求
+				 * * 如果有请求参数，发送的POST请求。请求没有中文乱码
+				 * * 回调函数的参数
+				 * 		参数1：data，响应数据。load()永远获得字符串，如果需要使用，必须手动转换json对象。
+				$(this).load(url,params,function(data){
+					//转换json对象
+					var jsonData = eval("("+data+")");
+					alert(jsonData.message);
+				});
+				 */
+				
+				/* 2 $.get() 全局函数，发送get请求
+				 * * 格式：jQuery.get(url, [data], [callback], [type])
+				 * 		* 参数4：type ，返回内容格式，xml, html, script, json, text, _default。
+				 * * GET请求不适合发送中文数据，存放请求的中文乱码。
+				 * 		必须手动解码   new String(username.getBytes("ISO-8859-1") ,"UTF-8")
+				 * * 响应数据，如果使用  application/json;charset=UTF-8 ，jQuery自动将数据转换json对象。
+				 * * 响应数据，如果使用  text/html;charset=UTF-8 ，回调函数获得字符串数据，需要手动转换。
+				 * 		使用“参数4”，设置"json"，jQuery将字符串 转换成 json对象
+				$.get(url,params,function(data){
+					alert(data);
+				},"json");
+				 */
+				
+				/* 3 $.post() 全局函数，发送post请求
+				 * * 格式：jQuery.post(url, [data], [callback], [type])
+				$.post(url,params,function(data){
+					alert(data);
+				},"json")
+				 */
+				
+				/* 4 $.ajax() 底层功能最强大的
+				 * * 格式：jQuery.ajax([settings])
+				 * 		参数settings：设置所有的参数
+				 * 			url:发送请求的地址
+				 * 			data:发送到服务器的数据,请求参数
+				 * 			type:请求方式 ("POST" 或 "GET")， 
+				 * 			success:成功的回调函数，success(data, textStatus, jqXHR)
+				 * 			error:请求失败时调用此函数
+				 * 			dataType:预期服务器返回的数据类型
+				 * 				"xml": 返回 XML 文档，可用 jQuery 处理。
+				 * 				"html": 返回纯文本 HTML 信息；包含的script标签会在插入dom时执行。
+				 * 				"script": 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了"cache"参数。'''注意：'''在远程请求时(不在同一个域下)，所有POST请求都将转为GET请求。(因为将使用DOM的script标签来加载)
+				 * 				"json": 返回 JSON 数据 。
+				 * 				"jsonp": JSONP 格式。使用 JSONP 形式调用函数时，如 "myurl?callback=?" jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。
+				 * 				"text": 返回纯文本字符串
+				 */
+				
+				$.ajax({
+					"url":url,
+					"data":params,
+					"type":"POST",
+					"success":function(data){
+						alert(data);
+					},
+					"error":function(){
+						alert("服务器繁忙，请稍后重试");
+					},
+					"dataType":"json"
+				});
+				
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	
+	<input type="button" value="发送ajax" />
+	
+	
+</body>
+</html>

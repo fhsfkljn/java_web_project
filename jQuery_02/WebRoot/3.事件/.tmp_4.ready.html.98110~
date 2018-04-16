@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var i= 0; 
+			
+		});
+		
+		
+	</script>
+	
+</head>
+<body>
+	<div id="outerDiv" style="border:1px solid #f00;width:200px;height:200px">
+		<div id="innerDiv" style="border:1px solid #00f;width:100px;height:100px"></div>
+	</div>
+	
+	<br/>
+	<span id="showSpan"></span>
+		
+</body>
+</html>
