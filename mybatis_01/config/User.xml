@@ -25,4 +25,42 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		resultType="com.chao.mybatis.po.User">
 		SELECT * FROM USER WHERE username LIKE '%${value}%'
 	</select>
+	
+	<!-- 添加用户 -->
+	<!-- selectKey：查询主键，在标签内需要输入查询主键的sql -->
+	<!-- order：指定查询主键的sql和insert语句的执行顺序，相当于insert语句来说 -->
+	<!-- LAST_INSERT_ID：该函数是mysql的函数，获取自增主键的ID，它必须配合insert语句一起使用 -->
+	<insert id="insertUser" parameterType="com.chao.mybatis.po.User">
+		<selectKey keyProperty="id" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO USER
+		(username,birthday,sex,address)
+		VALUES(#{username},#{birthday},#{sex},#{address})
+	</insert>
+	
+	 
+	<!-- 自增主键之UUID -->
+	<!--  <insert id="insertUser2" parameterType="com.itheima.mybatis.po.User">
+		<selectKey keyProperty="id" resultType="string" order="BEFORE">
+			SELECT UUID() 
+		</selectKey>
+	
+		INSERT INTO USER
+		(id,username,birthday,sex,address)
+		VALUES(#{id},#{username},#{birthday},#{sex},#{address})
+	</insert>
+	-->
+	 
+	<!-- 自增主键之序列 -->
+	<!-- <insert id="insertUser3" parameterType="com.itheima.mybatis.po.User">
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			SELECT seq.nextval FROM dual
+		</selectKey>
+	
+		INSERT INTO USER
+		(id,username,birthday,sex,address)
+		VALUES(#{id},#{username},#{birthday},#{sex},#{address})
+	</insert> 
+	 -->
 </mapper>

@@ -6,6 +6,18 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- 加载java的配置文件或者声明属性信息 -->
 	<properties resource="db.properties"></properties>
+	
+	<!-- <settings></settings> -->
+	
+	<!-- 自定义别名 -->
+	<typeAliases>
+		<!-- 单个别名定义 -->
+		<!-- <typeAlias type="com.itheima.mybatis.po.User" alias="user"/> -->
+
+		<!-- 批量别名定义（推荐） -->
+		<!-- package：指定包名称来为该包下的po类声明别名，默认的别名就是类名（首字母大小写都可） -->
+		<package name="com.chao.mybatis.po" />
+	</typeAliases>
 
 	<!-- 配置mybatis的环境信息，与spring整合，该信息由spring来管理 -->
 	<environments default="development">
@@ -25,5 +37,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!-- 加载映射文件 -->
 	<mappers>
 		<mapper resource="User.xml"/>
+		<!--  <mapper resource="mapper/UserMapper.xml" /> -->
+		
+		<!-- 批量加载映射文件 -->
+		<package name="com.chao.mybatis.mapper" />
 	</mappers>
 </configuration>

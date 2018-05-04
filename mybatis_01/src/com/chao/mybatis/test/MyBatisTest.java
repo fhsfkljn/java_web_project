@@ -53,7 +53,35 @@ public class MyBatisTest {
 		// 第一个参数：表示statement的唯一标示
 		List<User> list = sqlSession.selectList("test.findUsersByName", "小明");
 		System.out.println(list);
-		//关闭资源
+		// 关闭资源
 		sqlSession.close();
+	}
+
+	@Test
+	public void insertUser() throws IOException {
+		// 读取配置文件
+		// 全局配置文件的路径
+		String resource = "SqlMapConfig.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+
+		// 创建SqlSessionFactory
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+		// 创建SqlSession
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+
+		User user = new User();
+		user.setUsername("杨远帆");
+		user.setSex("男");
+		user.setAddress("陕西");
+		sqlSession.insert("test.insertUser", user);
+		System.out.println(user.getId());
+
+		// 提交事务
+		sqlSession.commit();
+
+		// 关闭资源
+		sqlSession.close();
+
 	}
 }

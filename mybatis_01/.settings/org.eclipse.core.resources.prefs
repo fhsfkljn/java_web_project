@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/com/chao/mybatis/po/User.java=UTF-8
+encoding//src/com/chao/mybatis/po/UserQueryVO.java=UTF-8
+encoding//test/com/chao/mybatis/mapper/UserMapperTest.java=UTF-8
